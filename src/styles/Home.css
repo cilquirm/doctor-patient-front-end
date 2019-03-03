@@ -1,0 +1,88 @@
+/* NavBar */
+
+.navbar {
+  width: 100%;
+  height: auto;
+  background-color: white;
+}
+
+/* Homepage */
+
+.mainImage {
+  width: 100%;
+  height: auto;
+  opacity: 0.8;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* centered text on image */
+.centered {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 150px;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 15px;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.df_icon {
+  position: absolute;
+  top: 40%;
+  right: 20%;
+  height: 90px;
+  widows: auto;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  transform-origin: bottom;
+}
+.bounce-3 {
+  animation-name: bounce-3;
+  animation-timing-function: ease;
+}
+
+@keyframes bounce-3 {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-50px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.filter input {
+  /* Size and position */
+  position: absolute;
+  border-radius: 15px;
+  width: 500px;
+  height: 50px;
+  font-size: 40px;
+  top: 70px;
+  left: 40%;
+  z-index: 1;
+  opacity: 0.5;
+}
+.filter label {
+  /* Size and position */
+  position: absolute;
+  border-radius: 15px;
+  width: 500px;
+  height: 50px;
+  font-size: 40px;
+  top: 70px;
+  left: 23%;
+  z-index: 1;
+}
