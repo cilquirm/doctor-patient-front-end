@@ -63,7 +63,7 @@
   }
 }
 
-.filter input {
+.filter select {
   /* Size and position */
   position: absolute;
   border-radius: 15px;
