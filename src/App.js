@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import Homepage from "./containers/Homepage";
 import Specialists from "./containers/Specialists";
 import DoctorShow from "./containers/DoctorShow";
-import { Route } from "react-router-dom";
+import { Route, withRouter } from "react-router-dom";
 
 const DOCTORS_API = "http://localhost:8000/api/v1/doctors";
 
@@ -23,10 +23,10 @@ class App extends Component {
 
   selectSpecialty = event => {
     event.preventDefault();
-    console.log(event.target.value);
+    // console.log(event.target.value);
     this.setState({ specialty: event.target.value });
-
-    //this.props.location.push("/specialists", this.state);
+    // debugger;
+    this.props.history.push("/specialists");
     //NEED TO REDIRECT HERE WITH STATE INTACT!
   };
 
@@ -59,4 +59,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

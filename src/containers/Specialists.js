@@ -6,6 +6,7 @@ import "../styles/Specialists.css";
 
 const Specialists = props => {
   function filterBySpecialty() {
+    // debugger;
     if (props.specialty === "all") {
       return props.doctors;
     } else {
