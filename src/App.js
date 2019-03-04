@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from "react";
+import ReactDOM from "react-dom";
 import Homepage from "./containers/Homepage";
 import Specialists from "./containers/Specialists";
+import DoctorShow from "./containers/DoctorShow";
 import { Route } from "react-router-dom";
 
 const DOCTORS_API = "http://localhost:8000/api/v1/doctors";
@@ -24,6 +26,7 @@ class App extends Component {
     console.log(event.target.value);
     this.setState({ specialty: event.target.value });
 
+    //this.props.location.push("/specialists", this.state);
     //NEED TO REDIRECT HERE WITH STATE INTACT!
   };
 
@@ -44,6 +47,12 @@ class App extends Component {
               specialty={this.state.specialty}
             />
           )}
+        />
+        {/*Need to fix to only pass one dr, but for test now will filter by id*/}
+        <Route
+          exact
+          path="/doctor"
+          render={() => <DoctorShow doctors={this.state.doctors} />}
         />
       </Fragment>
     );
