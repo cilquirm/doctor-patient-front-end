@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
 const DoctorCard = props => {
   const {
@@ -11,8 +12,12 @@ const DoctorCard = props => {
     zip
   } = props.doctor.attributes;
 
+  function handleClick() {
+    props.history.push(`/specialists/${props.doctor.id}`);
+  }
+
   return (
-    <div className="doctorCard">
+    <div className="doctorCard" onClick={handleClick}>
       <img
         className="docImage"
         src="http://localhost:3000/vitruvian_man.jpg"
@@ -21,7 +26,7 @@ const DoctorCard = props => {
       <div className="details">
         <h4>{specialty}</h4>
         <h2>
-          {first_name} {last_name}
+          Dr. {first_name} {last_name}
         </h2>
         <p>
           Address: <br />
@@ -33,4 +38,4 @@ const DoctorCard = props => {
   );
 };
 
-export default DoctorCard;
+export default withRouter(DoctorCard);

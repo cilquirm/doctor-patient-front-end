@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from "react";
-import ReactDOM from "react-dom";
 import Homepage from "./containers/Homepage";
 import Specialists from "./containers/Specialists";
 import DoctorShow from "./containers/DoctorShow";
@@ -23,11 +22,14 @@ class App extends Component {
 
   selectSpecialty = event => {
     event.preventDefault();
-    // console.log(event.target.value);
     this.setState({ specialty: event.target.value });
-    // debugger;
     this.props.history.push("/specialists");
-    //NEED TO REDIRECT HERE WITH STATE INTACT!
+  };
+
+  findDoctor = id => {
+    return this.state.doctors.find(doctor => {
+      return doctor.id === id;
+    });
   };
 
   render() {
@@ -48,11 +50,13 @@ class App extends Component {
             />
           )}
         />
-        {/*Need to fix to only pass one dr, but for test now will filter by id*/}
         <Route
           exact
-          path="/doctor"
-          render={() => <DoctorShow doctors={this.state.doctors} />}
+          path="/specialists/:id"
+          render={routerProps => {
+            let doctor = this.findDoctor(routerProps.match.params.id);
+            return doctor ? <DoctorShow doctor={doctor} /> : <h1>LOADING</h1>;
+          }}
         />
       </Fragment>
     );

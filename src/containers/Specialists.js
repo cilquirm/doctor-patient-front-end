@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import NavBar from "../components/NavBar";
 import DoctorCard from "../components/DoctorCard";
 import "../styles/Home.css";
@@ -6,7 +6,6 @@ import "../styles/Specialists.css";
 
 const Specialists = props => {
   function filterBySpecialty() {
-    // debugger;
     if (props.specialty === "all") {
       return props.doctors;
     } else {
@@ -23,10 +22,10 @@ const Specialists = props => {
   }
 
   return (
-    <div className="specialists">
+    <Fragment>
       <NavBar />
-      {mapDoctors()}
-    </div>
+      <div className="specialists">{mapDoctors()}</div>
+    </Fragment>
   );
 };
 
