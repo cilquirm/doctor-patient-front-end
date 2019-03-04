@@ -1,6 +1,9 @@
 import React, { Fragment } from "react";
 import NavBar from "../components/NavBar";
 import "../styles/Specialists.css";
+import Calendar from '../components/Calendar'
+import Schedule from '../components/Schedule'
+import ScheduleBootStrap from '../components/ScheduleBootStrap'
 
 const DoctorShow = props => {
   const test = props.doctors.filter(doctor => {
@@ -17,7 +20,7 @@ const DoctorShow = props => {
     zip
   } = test;
 
-  console.log(test);
+  // console.log(test);
 
   function joinAddress() {
     let formattedStreet = street.split(" ").join("%20");
@@ -35,7 +38,7 @@ const DoctorShow = props => {
     );
   }
 
-  console.log(joinAddress());
+  // console.log(joinAddress());
   return (
     <Fragment>
       <NavBar />
@@ -71,6 +74,11 @@ const DoctorShow = props => {
           <br />
         </div>
       </div>
+
+      {/*<Schedule />*/}
+      <ScheduleBootStrap />
+      <br/>
+      <br/>
     </Fragment>
   );
 };
