@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import NavBar from "../components/NavBar";
-//import { Map, Marker, Popup, TileLayer } from "react-leaflet";
+import DoctorMap from "../components/DoctorMap";
+
 import "../styles/SpecialistsShow.css";
 
 const DoctorShow = props => {
@@ -12,7 +13,9 @@ const DoctorShow = props => {
     state,
     street,
     zip,
-    bio
+    bio,
+    latitude,
+    longitude
   } = props.doctor.attributes;
 
   return (
@@ -42,6 +45,7 @@ const DoctorShow = props => {
             <br />
             {zip}
           </p>
+          <DoctorMap lat={latitude} long={longitude} />
         </div>
       </div>
     </Fragment>
