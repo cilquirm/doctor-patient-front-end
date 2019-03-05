@@ -45,7 +45,7 @@ const DoctorShow = props => {
             <br />
             {zip}
           </p>
-          <DoctorMap lat={latitude} long={longitude} />
+          <DoctorMap lat={latitude} long={longitude} name={last_name} />
         </div>
       </div>
     </Fragment>
