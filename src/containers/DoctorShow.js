@@ -33,7 +33,7 @@ const DoctorShow = props => {
         </div>
 
         <div className="doctorDetails">
-          <Schedule doctorId={props.doctor.id} />
+          <Schedule doctorId={props.doctor.id} setConfirmation={props.setConfirmation}/>
           <h4>{specialty}</h4>
           <h2>
             Dr. {first_name} {last_name}

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import Modal from "react-modal";
 import Calendar from "./Calendar";
+import { withRouter } from "react-router-dom";
 
 const customStyles = {
   content: {
@@ -68,7 +69,9 @@ class ExampleModal extends Component {
       })
     })
       .then(res => res.json())
-      .then(data => console.log(data));
+      .then(data => {this.props.setConfirmation(data)})
+   
+    
   }
 
   handleOnChange(e) {
@@ -90,14 +93,14 @@ class ExampleModal extends Component {
   }
 
   calendarOnChange = date => {
-    console.log(date);
+    // console.log(date);
     this.setState({
       date: date
     });
   };
 
   timeOnChange = title => (...args) => {
-    console.log(title, args);
+    // console.log(title, args);
 
     // console.log(args.join().replace(/,/gi, ":"))
     let minute = args[1];
@@ -121,7 +124,7 @@ class ExampleModal extends Component {
   };
 
   render() {
-    console.log(this.state);
+    // console.log('my state: ', this.state, 'my props: ', this.props);
     return (
       <div>
         <button className="scheduleBtn" onClick={this.openModal}>
@@ -174,4 +177,4 @@ class ExampleModal extends Component {
   }
 }
 
-export default ExampleModal;
+export default withRouter(ExampleModal);
