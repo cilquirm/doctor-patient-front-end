@@ -11,50 +11,17 @@ const Panel = ({ header, children }) => (
 );
 class Calendar extends Component {
 
-state = {
-	date: "",
-	time: ""
-}
-
-
-calendarOnChange = (date) => {
-    console.log(date);
-    this.setState({
-    	date: date
-    })
-  }
-	
-timeOnChange = title => (...args) => {console.log(title, args)
-
-// console.log(args.join().replace(/,/gi, ":"))
-let minute = args[1]
-let stringMin = minute.toString()
-// console.log(stringMin.length)
-
-if (stringMin.length < 2){stringMin = "0" + stringMin}
-// console.log(stringMin)
-
-let hour = args[0]+":"
-let pmam = args[2]
-let fullTime = hour + stringMin + pmam
-
-// console.log(fullTime)
-
-this.setState({
-	time: fullTime
-})
-}
 
 
 render(){
-console.log(this.state)
+// console.log(this.state)
 return(
 	<Fragment>
 	<Panel header="DatePicker">
-	<DatePicker onChange={this.calendarOnChange}/>
+	<DatePicker onChange={this.props.calendarOnChange}/>
 	</Panel>
 	<Panel header="Time Picker">
-	<TimePicker onChange={this.timeOnChange("Time Picker")}/>
+	<TimePicker onChange={this.props.timeOnChange("Time Picker")}/>
 	</Panel>
 	</Fragment>
 	)

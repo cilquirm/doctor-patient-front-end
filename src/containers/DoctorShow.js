@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
 import NavBar from "../components/NavBar";
 import "../styles/Specialists.css";
-import Calendar from '../components/Calendar'
+// import Calendar from '../components/Calendar'
 import Schedule from '../components/Schedule'
-import ScheduleBootStrap from '../components/ScheduleBootStrap'
+// import ScheduleBootStrap from '../components/ScheduleBootStrap'
 
 const DoctorShow = props => {
   const test = props.doctors.filter(doctor => {
@@ -74,9 +74,7 @@ const DoctorShow = props => {
           <br />
         </div>
       </div>
-
-      {/*<Schedule />*/}
-      <ScheduleBootStrap />
+      <Schedule />
       <br/>
       <br/>
     </Fragment>
