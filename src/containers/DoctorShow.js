@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import NavBar from "../components/NavBar";
 import DoctorMap from "../components/DoctorMap";
+import Schedule from "../components/Schedule";
 
 import "../styles/SpecialistsShow.css";
 
@@ -32,6 +33,7 @@ const DoctorShow = props => {
         </div>
 
         <div className="doctorDetails">
+          <Schedule />
           <h4>{specialty}</h4>
           <h2>
             Dr. {first_name} {last_name}
@@ -45,7 +47,12 @@ const DoctorShow = props => {
             <br />
             {zip}
           </p>
-          <DoctorMap lat={latitude} long={longitude} name={last_name} />
+          <DoctorMap
+            className="specialistMap"
+            lat={latitude}
+            long={longitude}
+            name={last_name}
+          />
         </div>
       </div>
     </Fragment>
