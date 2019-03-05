@@ -17,8 +17,8 @@ const customStyles = {
 Modal.setAppElement("#root");
 
 class ExampleModal extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       modalIsOpen: false,
@@ -56,15 +56,19 @@ class ExampleModal extends Component {
     fetch(`http://localhost:8000/api/v1/appointments`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json; charset=utf-8",
+        "Content-Type": "application/json",
         Accept: "application/json"
       },
       body: JSON.stringify({
-        doctor_id: 1,
-        patient_id: 1,
-        appointment: `${this.state.date}, ${this.state.time}`
+        appointmentProps: {
+          doctor_id: this.props.doctorId,
+          patient_id: 1,
+          appointment: `${this.state.date}, ${this.state.time}`
+        }
       })
-    }).then(res => console.log(res));
+    })
+      .then(res => res.json())
+      .then(data => console.log(data));
   }
 
   handleOnChange(e) {

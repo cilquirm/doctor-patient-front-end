@@ -33,7 +33,7 @@ const DoctorShow = props => {
         </div>
 
         <div className="doctorDetails">
-          <Schedule />
+          <Schedule doctorId={props.doctor.id} />
           <h4>{specialty}</h4>
           <h2>
             Dr. {first_name} {last_name}
@@ -47,12 +47,14 @@ const DoctorShow = props => {
             <br />
             {zip}
           </p>
-          <DoctorMap
-            className="specialistMap"
-            lat={latitude}
-            long={longitude}
-            name={last_name}
-          />
+          <div>
+            <DoctorMap
+              className="specialistMap"
+              lat={latitude}
+              long={longitude}
+              name={last_name}
+            />
+          </div>
         </div>
       </div>
     </Fragment>

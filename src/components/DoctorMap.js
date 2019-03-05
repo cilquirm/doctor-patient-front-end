@@ -38,7 +38,8 @@ export default class DoctorMap extends Component {
           style={{
             paddingBottom: "5%",
             height: "500px",
-            width: "800px"
+            width: "800px",
+            zIndex: 0
           }}
           center={position}
           zoom={this.state.zoom}
