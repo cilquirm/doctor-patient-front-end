@@ -2,7 +2,6 @@ import React, { Fragment } from "react";
 import NavBar from "../components/NavBar";
 import DoctorMap from "../components/DoctorMap";
 import Schedule from "../components/Schedule";
-
 import "../styles/SpecialistsShow.css";
 
 const DoctorShow = props => {
@@ -19,6 +18,13 @@ const DoctorShow = props => {
     longitude
   } = props.doctor.attributes;
 
+function randomImage() {
+    let number = Math.floor(Math.random() * Math.floor(5))
+
+    console.log(number)
+    return `http://localhost:3000/profile_pictures/doctor${number}.jpg`
+  }
+
   return (
     <Fragment>
       <NavBar />
@@ -27,7 +33,7 @@ const DoctorShow = props => {
         <div className="doctorImage">
           <img
             className="docImage"
-            src="http://localhost:3000/vitruvian_man.jpg"
+            src= {randomImage()}
             alt="placehoder doctor"
           />
         </div>

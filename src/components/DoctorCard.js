@@ -12,6 +12,7 @@ const DoctorCard = props => {
     zip
   } = props.doctor.attributes;
 
+
   function handleClick() {
     props.history.push(`/specialists/${props.doctor.id}`);
   }
