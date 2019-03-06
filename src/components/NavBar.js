@@ -1,9 +1,15 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = props => {
+  function sendToHomepage() {
+    props.history.push("/");
+  }
+
   return (
     <div className="navbar">
       <img
+        onClick={sendToHomepage}
         className="navImage"
         src="http://localhost:3000/docfinder.png"
         alt="DocFinder Logo"
@@ -12,4 +18,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default withRouter(NavBar);
