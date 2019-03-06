@@ -17,8 +17,8 @@ body {
 }
 
 .doctorImage {
-  display: inline-block;
-  width: 40%;
+/*  display: inline-block;*/  
+  width: 100%;
   height: auto;
 }
 
@@ -59,3 +59,4 @@ p {
   background-color: purple;
   color: white;
 }
+
