@@ -17,7 +17,9 @@ const Specialists = props => {
 
   function mapDoctors() {
     return filterBySpecialty().map(doctor => {
-      return <DoctorCard key={doctor.id} doctor={doctor} />;
+      return (
+        <DoctorCard key={doctor.id} doctor={doctor} setImage={props.setImage} />
+      );
     });
   }
 

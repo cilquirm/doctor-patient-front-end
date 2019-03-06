@@ -11,7 +11,8 @@ class App extends Component {
   state = {
     doctors: [],
     specialty: "all",
-    confirmation: {}
+    confirmation: {},
+    doctorImage: ""
   };
 
   componentDidMount() {
@@ -34,6 +35,12 @@ class App extends Component {
     });
   };
 
+  setImage = (image, id) => {
+    this.setState({ doctorImage: image }, () => {
+      this.props.history.push(`/specialists/${id}`);
+    });
+  };
+
   setConfirmation = obj => {
     this.setState(
       {
@@ -46,7 +53,8 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.state.confirmation);
+    console.log("APP", this.state.doctorImage);
+    console.log(typeof this.state.doctorImage);
     return (
       <Fragment>
         <Route
@@ -61,6 +69,7 @@ class App extends Component {
             <Specialists
               doctors={this.state.doctors}
               specialty={this.state.specialty}
+              setImage={this.setImage}
             />
           )}
         />
@@ -73,6 +82,7 @@ class App extends Component {
               <DoctorShow
                 doctor={doctor}
                 setConfirmation={this.setConfirmation}
+                doctorImage={this.state.doctorImage}
               />
             ) : (
               <h1>LOADING</h1>

@@ -28,10 +28,11 @@ export default class DoctorMap extends Component {
 
     return (
       <div
+        className="specialistMap"
         style={{
           paddingBottom: "5%",
           height: "500px",
-          width: "800px"
+          maxWidth: "1000px"
         }}
       >
         <Map

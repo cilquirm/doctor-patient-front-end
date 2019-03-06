@@ -18,7 +18,7 @@ const Homepage = props => {
             <option value="all">All</option>
             <option value="Dentist">Dentist</option>
             <option value="Emergency Medicine">Emergency Medicine</option>
-            <option value="Family Practice">Family Practice</option>
+            <option value="Family Medicine">Family Medicine</option>
             <option value="Internal Medicine">Internal Medicine</option>
             <option value="Obstetrics & Gynecology">
               Obstetrics & Gynecology

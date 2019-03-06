@@ -6,12 +6,15 @@
   background-color: white;
 }
 
+.navbar img {
+  margin-top: 5px;
+}
+
 /* Homepage */
 
-.mainImage {
-  width: 100%;
-  height: auto;
-  opacity: 0.8;
+img {
+  max-width: 100%;
+  opacity: 0.85;
 }
 
 .container {
@@ -23,10 +26,11 @@
 /* centered text on image */
 .centered {
   position: absolute;
-  top: 40%;
+  max-width: 40%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 150px;
+  font-size: 110px;
   background: rgba(0, 0, 0, 0.45);
   border-radius: 15px;
   padding: 20px;
@@ -67,9 +71,9 @@
   /* Size and position */
   position: absolute;
   border-radius: 15px;
-  width: 500px;
+  max-width: 500px;
   height: 50px;
-  font-size: 40px;
+  font-size: 35px;
   top: 70px;
   left: 40%;
   z-index: 1;
@@ -78,6 +82,7 @@
 .filter label {
   /* Size and position */
   position: absolute;
+  margin-right: 10px;
   border-radius: 15px;
   width: 500px;
   height: 50px;

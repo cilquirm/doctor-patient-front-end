@@ -11,18 +11,17 @@ body {
 }
 
 .specialistsShow img {
-  height: 500px;
-  width: 500px;
+  max-width: 500px;
   margin: 25px;
 }
 
 .doctorImage {
-/*  display: inline-block;*/  
-  width: 100%;
-  height: auto;
+  /* display: inline-block; */
+  max-width: 40%;
 }
 
 .doctorsDetails {
+  width: 66%;
   display: inline-block;
   margin: 10px;
 }
@@ -30,7 +29,7 @@ body {
 h4 {
   margin-top: 20px;
   font-size: 25px;
-  color: purple;
+  color: rgb(127, 42, 174);
 }
 
 h2 {
@@ -52,11 +51,38 @@ p {
 
 .scheduleBtn {
   float: right;
-  margin-right: 30px;
+  margin-right: 50px;
   padding: 10px;
   border-radius: 10px;
   font-size: 20px;
-  background-color: purple;
+  background-color: rgb(127, 42, 174);
   color: white;
+  font-weight: bold;
+  -webkit-animation: flash linear 2s;
+  animation: flash linear 2s;
+}
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
+.specialistMap {
+  max-width: 1000px;
+}
+
+.doctorInfo {
+  margin: 25px;
+  font-size: 40px;
+}
+
+.doctorInfo span {
+  font-weight: bold;
+  color: rgb(127, 42, 174);
+}

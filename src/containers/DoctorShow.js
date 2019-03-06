@@ -15,15 +15,12 @@ const DoctorShow = props => {
     zip,
     bio,
     latitude,
-    longitude
+    longitude,
+    license_state,
+    license_number,
+    website,
+    accepts_new_patients
   } = props.doctor.attributes;
-
-function randomImage() {
-    let number = Math.floor(Math.random() * Math.floor(5))
-
-    console.log(number)
-    return `http://localhost:3000/profile_pictures/doctor${number}.jpg`
-  }
 
   return (
     <Fragment>
@@ -31,15 +28,28 @@ function randomImage() {
 
       <div className="specialistsShow">
         <div className="doctorImage">
-          <img
-            className="docImage"
-            src= {randomImage()}
-            alt="placehoder doctor"
-          />
+          <img src={`${props.doctorImage}`} alt="placehoder doctor" />
+          <div className="doctorInfo">
+            <p>
+              <br />
+              <span>License state: </span> {license_state} <br />
+              <span>License number:</span>{" "}
+              {license_number ? license_number : "NA"}
+              <br /> <br />
+              <span>Accepting new patients?:</span>{" "}
+              {accepts_new_patients ? "Yes" : "Not at this time"}
+              <br />
+              <br />
+              <span>Website:</span> {website ? website : "Not provided"}
+            </p>
+          </div>
         </div>
 
         <div className="doctorDetails">
-          <Schedule doctorId={props.doctor.id} setConfirmation={props.setConfirmation}/>
+          <Schedule
+            doctorId={props.doctor.id}
+            setConfirmation={props.setConfirmation}
+          />
           <h4>{specialty}</h4>
           <h2>
             Dr. {first_name} {last_name}
@@ -98,7 +108,4 @@ export default DoctorShow;
 //     />
 //   </div>
 //   <br />
-// </div>
-
-// <div>
 // </div>
