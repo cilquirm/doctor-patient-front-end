@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import Modal from "react-modal";
 import Calendar from "./Calendar";
 import { withRouter } from "react-router-dom";
@@ -23,9 +22,10 @@ class ExampleModal extends Component {
 
     this.state = {
       modalIsOpen: false,
-      name: "",
+      first_name: "",
+      last_name: "",
       number: "",
-      address: "",
+      email: "",
       date: "",
       time: ""
     };
@@ -63,31 +63,42 @@ class ExampleModal extends Component {
       body: JSON.stringify({
         appointmentProps: {
           doctor_id: this.props.doctorId,
-          patient_id: 1,
-          appointment: `${this.state.date}, ${this.state.time}`
+          patient_id: null,
+          appointment: `${this.state.date}, ${this.state.time} GMT-4`
+        },
+        patient_info: {
+          first_name: this.state.first_name,
+          last_name: this.state.last_name,
+          phone: this.state.number,
+          email: this.state.email
         }
       })
     })
       .then(res => res.json())
-      .then(data => {this.props.setConfirmation(data)})
-   
-    
+      .then(data => {
+        this.props.setConfirmation(data);
+      });
   }
 
   handleOnChange(e) {
-    if (e.target.id == "name") {
+    if (e.target.id === "first_name") {
       this.setState({
-        name: e.target.value
+        first_name: e.target.value
       });
     }
-    if (e.target.id == "number") {
+    if (e.target.id === "last_name") {
+      this.setState({
+        last_name: e.target.value
+      });
+    }
+    if (e.target.id === "number") {
       this.setState({
         number: e.target.value
       });
     }
-    if (e.target.id == "address") {
+    if (e.target.id === "email") {
       this.setState({
-        address: e.target.value
+        email: e.target.value
       });
     }
   }
@@ -146,14 +157,21 @@ class ExampleModal extends Component {
           <br />
           <div>Your information: </div>
           <br />
-          Name:{" "}
+          First name:{" "}
           <input
-            id="name"
-            value={this.state.name}
+            id="first_name"
+            value={this.state.fist_name}
             onChange={e => this.handleOnChange(e)}
           />
           <br />
-          Number:{" "}
+          Last name:{" "}
+          <input
+            id="last_name"
+            value={this.state.last_name}
+            onChange={e => this.handleOnChange(e)}
+          />
+          <br />
+          Phone:{" "}
           <input
             id="number"
             value={this.state.number}
@@ -162,8 +180,8 @@ class ExampleModal extends Component {
           <br />
           Email:{" "}
           <input
-            id="address"
-            value={this.state.address}
+            id="email"
+            value={this.state.email}
             onChange={e => this.handleOnChange(e)}
           />
           <br />

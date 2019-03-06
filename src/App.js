@@ -3,7 +3,7 @@ import Homepage from "./containers/Homepage";
 import Specialists from "./containers/Specialists";
 import DoctorShow from "./containers/DoctorShow";
 import { Route, withRouter } from "react-router-dom";
-import Confirmation from './components/Confirmation'
+import Confirmation from "./components/Confirmation";
 
 const DOCTORS_API = "http://localhost:8000/api/v1/doctors";
 
@@ -34,14 +34,19 @@ class App extends Component {
     });
   };
 
-  setConfirmation = (obj) => {
-    this.setState({
-      confirmation: obj
-    }, ()=>{this.props.history.push("/confirmation")})
-  }
+  setConfirmation = obj => {
+    this.setState(
+      {
+        confirmation: obj
+      },
+      () => {
+        this.props.history.push("/confirmation");
+      }
+    );
+  };
 
   render() {
-    // console.log(this.props.history)
+    console.log(this.state.confirmation);
     return (
       <Fragment>
         <Route
@@ -64,19 +69,32 @@ class App extends Component {
           path="/specialists/:id"
           render={routerProps => {
             let doctor = this.findDoctor(routerProps.match.params.id);
-            return doctor ? <DoctorShow doctor={doctor} setConfirmation={this.setConfirmation}/> : <h1>LOADING</h1>;
+            return doctor ? (
+              <DoctorShow
+                doctor={doctor}
+                setConfirmation={this.setConfirmation}
+              />
+            ) : (
+              <h1>LOADING</h1>
+            );
           }}
         />
-         <Route
+        <Route
           exact
           path="/confirmation"
           render={() => {
-            console.log(this.state.confirmation.doctor_id)
-            let idToString = this.state.confirmation.doctor_id + ""
-            console.log(idToString)
-            let doctor = this.findDoctor(idToString)
-            console.log(doctor)
-            return doctor ? <Confirmation doctor={doctor} confirmationInfo={this.state.confirmation}/> : <h1>LOADING</h1>}}
+            // console.log(this.state.confirmation.doctor_id);
+            let idToString = this.state.confirmation.confirmed.doctor_id + "";
+            let doctor = this.findDoctor(idToString);
+            return doctor ? (
+              <Confirmation
+                doctor={doctor}
+                confirmationInfo={this.state.confirmation}
+              />
+            ) : (
+              <h1>LOADING</h1>
+            );
+          }}
         />
       </Fragment>
     );
