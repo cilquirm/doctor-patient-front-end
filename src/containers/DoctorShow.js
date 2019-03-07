@@ -22,6 +22,7 @@ const DoctorShow = props => {
     accepts_new_patients
   } = props.doctor.attributes;
 
+
   return (
     <Fragment>
       <NavBar />

@@ -53,8 +53,7 @@ class App extends Component {
   };
 
   render() {
-    console.log("APP", this.state.doctorImage);
-    console.log(typeof this.state.doctorImage);
+
     return (
       <Fragment>
         <Route
