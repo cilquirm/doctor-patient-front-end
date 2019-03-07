@@ -7,14 +7,9 @@ const Homepage = props => {
     <div className="home">
       <NavBar />
       <div className="container">
-        <form
-          className="filter"
-          align="center"
-          onChange={props.selectSpecialty}
-        >
-          <label>Search:</label>
+        <form className="filter" onChange={props.selectSpecialty}>
           <select id="specialists" placehoder="search for specialists">
-            <option value="">Specialties:</option>
+            <option value="">Select a specialty:</option>
             <option value="all">All</option>
             <option value="Dentist">Dentist</option>
             <option value="Emergency Medicine">Emergency Medicine</option>
@@ -31,6 +26,11 @@ const Homepage = props => {
             <option value="Surgery">Surgery</option>
           </select>
         </form>
+        <h2 className="centered">
+          Find a trusted <br />
+          specialist <br />
+          near you.
+        </h2>
         <img
           className="mainImage"
           src="http://localhost:3000/city_background.jpg"
@@ -41,11 +41,6 @@ const Homepage = props => {
           src="http://localhost:3000/df_icon.png"
           alt="Docfinder Logo Icon"
         />
-        <div className="centered">
-          Find a trusted <br />
-          specialist <br />
-          near you.
-        </div>
       </div>
     </div>
   );
