@@ -26,7 +26,6 @@ const DoctorCard = props => {
   let image = randomImage();
 
   function handleClick() {
-    console.log(typeof image);
     props.setImage(image, props.doctor.id);
   }
 

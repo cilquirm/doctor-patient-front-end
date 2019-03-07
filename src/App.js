@@ -3,7 +3,7 @@ import Homepage from "./containers/Homepage";
 import Specialists from "./containers/Specialists";
 import DoctorShow from "./containers/DoctorShow";
 import { Route, withRouter } from "react-router-dom";
-import Confirmation from "./components/Confirmation";
+import ConfirmationContainer from "./containers/ConfirmationContainer";
 
 const DOCTORS_API = "http://localhost:8000/api/v1/doctors";
 
@@ -53,8 +53,6 @@ class App extends Component {
   };
 
   render() {
-    console.log("APP", this.state.doctorImage);
-    console.log(typeof this.state.doctorImage);
     return (
       <Fragment>
         <Route
@@ -93,11 +91,11 @@ class App extends Component {
           exact
           path="/confirmation"
           render={() => {
-            // console.log(this.state.confirmation.doctor_id);
+            console.log(this.state.confirmation.confirmed.doctor_id);
             let idToString = this.state.confirmation.confirmed.doctor_id + "";
             let doctor = this.findDoctor(idToString);
             return doctor ? (
-              <Confirmation
+              <ConfirmationContainer
                 doctor={doctor}
                 confirmationInfo={this.state.confirmation}
               />

@@ -1,0 +1,90 @@
+/* Confirmation page css */
+
+.confirmation {
+  display: flex;
+  height: 550px;
+  overflow: hidden;
+}
+
+.confirmationDetails {
+  position: absolute;
+  color: white;
+  text-align: center;
+  padding: 80px;
+  background-repeat: no-repeat;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 15px;
+}
+
+.confirmation img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.suggestedContent {
+  height: 600px;
+  width: 100%;
+  display: flex;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  padding: 0 30px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {
+  margin: 35px 0 35px 23%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  display: inline-grid;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3); /* this adds the "card" effect */
+  height: 550px;
+  width: 450px;
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+
+.card img {
+  border-radius: 5px;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+button {
+  background-color: rgb(127, 42, 174);
+  padding: 15px;
+  font-size: 20px;
+  color: white;
+  border-radius: 15px;
+}

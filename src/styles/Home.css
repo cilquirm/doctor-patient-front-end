@@ -19,7 +19,6 @@ img {
 
 .container {
   display: grid;
-
   position: relative;
   text-align: center;
   color: white;
