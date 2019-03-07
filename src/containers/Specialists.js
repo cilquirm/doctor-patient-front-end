@@ -27,7 +27,7 @@ class Specialists extends Component {
 
   mapDoctors = (basket) => {
     return basket.map(doctor => {
-      return <DoctorCard key={doctor.id} doctor={doctor} setImage={props.setImage}/>;
+      return <DoctorCard key={doctor.id} doctor={doctor} setImage={this.props.setImage}/>;
 
     });
   }
