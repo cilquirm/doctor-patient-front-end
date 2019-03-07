@@ -4,6 +4,7 @@ import Specialists from "./containers/Specialists";
 import DoctorShow from "./containers/DoctorShow";
 import { Route, withRouter } from "react-router-dom";
 import Confirmation from "./components/Confirmation";
+import EditConfirmation from './components/EditConfirmation'
 
 const DOCTORS_API = "http://localhost:8000/api/v1/doctors";
 
@@ -104,6 +105,11 @@ class App extends Component {
               <h1>LOADING</h1>
             );
           }}
+        />
+        <Route
+          exact
+          path="/edit"
+          render={() => {return <EditConfirmation confirmationInfo={this.state.confirmation}/>}}
         />
       </Fragment>
     );

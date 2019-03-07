@@ -10,7 +10,7 @@ class Confirmation extends Component {
 
     return (
       <div>
-        <h1>CONFIRMATION PAGE </h1>
+        <h1> CONFIRMATION PAGE </h1>
 
         <p>
           Hello {this.props.confirmationInfo.patient_name}, your appointment
