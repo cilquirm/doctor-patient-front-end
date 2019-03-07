@@ -21,7 +21,7 @@ const DoctorShow = props => {
 function randomImage() {
     let number = Math.floor(Math.random() * Math.floor(5))
 
-    console.log(number)
+    // console.log(number)
     return `http://localhost:3000/profile_pictures/doctor${number}.jpg`
   }
 

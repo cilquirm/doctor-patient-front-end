@@ -46,7 +46,7 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.state.confirmation);
+    // console.log(this.state.confirmation);
     return (
       <Fragment>
         <Route
