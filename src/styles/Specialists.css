@@ -1,6 +1,14 @@
+/* Container */
+
+.container {
+  display: flex;
+  max-width: 100%;
+}
+
 /* Specialists */
 
 .specialists {
+  width: 70%;
   display: block;
 }
 
@@ -15,6 +23,7 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   background-color: rgb(216, 191, 216);
+  border-radius: 4px;
 }
 
 .doctorCard:hover {
@@ -27,11 +36,10 @@
   width: 200px;
   object-fit: cover;
   margin: 20px 15px 20px 20px;
-  /* border: purple solid 1px; */
+  border-radius: 4px;
 }
 
 .details {
-  display: block;
   width: 100%;
 }
 
@@ -53,4 +61,50 @@
   font-weight: bold;
   margin-top: 45px;
   color: white;
+}
+
+/* Search */
+
+.searchContainter {
+  margin-left: 3%;
+  width: 30%;
+}
+
+.search {
+  display: inline;
+  width: 30%;
+  position: fixed;
+  color: black;
+  background: rgba(211, 211, 211, 0.7);
+  border-radius: 15px;
+  padding: 50px;
+  margin-top: 40px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  margin-top: 15px;
+  padding: 15px;
+  width: 100%;
+  border-radius: 15px;
+  color: black;
+  font-size: 25px;
+}
+
+input[type="checkbox"] {
+  display: inline;
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(3); /* IE */
+  -moz-transform: scale(3); /* FF */
+  -webkit-transform: scale(3); /* Safari and Chrome */
+  -o-transform: scale(3); /* Opera */
+  padding: 20px;
+  margin-left: 25px;
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  margin-top: 25px;
 }

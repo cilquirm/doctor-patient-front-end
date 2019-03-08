@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Fragment } from "react";
 import moment from "moment";
 import { withRouter } from "react-router-dom";
 
@@ -37,7 +37,7 @@ const Confirmation = props => {
           <div class="column">
             <div class="card">
               <img src="http://localhost:3000/calendar.jpg" alt="calendar" />
-              <div class="container">
+              <div class="confirmationContainer">
                 <h4>
                   Need to make another <br />
                   appointment with a specialist?
@@ -55,7 +55,7 @@ const Confirmation = props => {
                 src="http://localhost:3000/seeAll.jpg"
                 alt="see appointments"
               />
-              <div class="container">
+              <div class="confirmationContainer">
                 <h4>
                   Need to review all of <br />
                   the appointments you've made?

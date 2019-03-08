@@ -5,13 +5,14 @@ import { withRouter } from "react-router-dom";
 
 const customStyles = {
   content: {
-    top: "55%",
+    top: "45%",
     left: "50%",
     right: "auto",
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     width: "50%",
+    heigh: "auto",
     textAlign: "center"
   }
 };
@@ -153,12 +154,6 @@ class ExampleModal extends Component {
           <h2 ref={subtitle => (this.subtitle = subtitle)}>
             Please fill out the below:
           </h2>
-          <button onClick={this.closeModal}>close</button>
-          <button onClick={e => this.handleSubmit(e)}>Submit</button>
-          <br />
-          <br />
-          <div>Your information: </div>
-          <br />
           First name:{" "}
           <input
             id="first_name"
@@ -191,6 +186,8 @@ class ExampleModal extends Component {
             calendarOnChange={this.calendarOnChange}
             timeOnChange={this.timeOnChange}
           />
+          <button onClick={this.closeModal}>close</button>
+          <button onClick={e => this.handleSubmit(e)}>Submit</button>
         </Modal>
       </div>
     );

@@ -6,7 +6,7 @@ const Homepage = props => {
   return (
     <div className="home">
       <NavBar />
-      <div className="container">
+      <div className="homeContainer">
         <form className="filter" onChange={props.selectSpecialty}>
           <select id="specialists" placehoder="search for specialists">
             <option value="">Select a specialty:</option>

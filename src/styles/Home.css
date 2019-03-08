@@ -17,7 +17,7 @@ img {
   opacity: 0.85;
 }
 
-.container {
+.homeContainer {
   display: grid;
   position: relative;
   text-align: center;
