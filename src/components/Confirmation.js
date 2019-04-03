@@ -23,7 +23,7 @@ const Confirmation = props => {
         <div className="confirmationDetails">
           <h1>
             Success! <br />
-            Your appointment has been scheduled,{" "}
+            Your appointment request has been made,{" "}
             {props.confirmationInfo.patient_name}.
           </h1>
           <p>
