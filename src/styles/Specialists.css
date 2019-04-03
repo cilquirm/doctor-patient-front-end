@@ -83,7 +83,7 @@
   font-weight: bold;
 }
 
-input[type="text"] {
+.search input[type="text"] {
   margin-top: 15px;
   padding: 15px;
   width: 100%;
@@ -92,19 +92,17 @@ input[type="text"] {
   font-size: 25px;
 }
 
-input[type="checkbox"] {
+.search input[type="checkbox"] {
   display: inline;
+  width: 15%;
   /* Double-sized Checkboxes */
   -ms-transform: scale(3); /* IE */
   -moz-transform: scale(3); /* FF */
   -webkit-transform: scale(3); /* Safari and Chrome */
   -o-transform: scale(3); /* Opera */
-  padding: 20px;
-  margin-left: 25px;
   margin-top: 0;
 }
 
-label {
-  display: block;
-  margin-top: 25px;
+.checkbox {
+  margin: 1vh 3vh;
 }

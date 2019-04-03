@@ -113,33 +113,33 @@ class Specialists extends Component {
               <br />
               <div className="checkboxes">
                 Locations: <br />
-                <label>
-                  New York:
+                <div className="checkbox">
                   <input
                     type="checkbox"
                     name="NY"
                     checked={this.state.NYcheck}
                     onChange={e => this.handleCheckInput(e)}
                   />
-                </label>
-                <label>
-                  New Jersey:
+                  <label> New York</label>
+                </div>
+                <div className="checkbox">
                   <input
                     type="checkbox"
                     name="NJ"
                     checked={this.state.NJcheck}
                     onChange={this.handleCheckInput}
                   />
-                </label>
-                <label>
-                  Non tri-state area:
+                  <label>New Jersey</label>
+                </div>
+                <div className="checkbox">
                   <input
                     type="checkbox"
                     name="Farther"
                     checked={this.state.Farthercheck}
                     onChange={this.handleCheckInput}
                   />
-                </label>
+                  <label>Non tri-state</label>
+                </div>
                 <br />
                 <br />
               </div>
